@@ -1,0 +1,40 @@
+# Dependency directories
+node_modules/
+
+# Next.js build artifacts
+.next/
+
+# Local environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+*.log
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Yarn
+yarn-error.log
+.pnp/
+.pnp.js
+.cache/
+
+# Jest coverage
+coverage/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini

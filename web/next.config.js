@@ -12,7 +12,7 @@ const nextConfig = {
       ...config,
       plugins: [
         ...config.plugins,
-        new ConsoleLogOnBuildWebpackPlugin()
+        new ConsoleLogOnBuildWebpackPlugin('emptyPath')
       ]
     }
     // console.log(config)

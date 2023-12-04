@@ -9,7 +9,4 @@ class ReactBootstrapMD3Plugin {
   }
 }
 
-
-const readJSON = 
-
 module.exports = ReactBootstrapMD3Plugin;

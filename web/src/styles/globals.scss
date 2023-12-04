@@ -1,3 +1,5 @@
-$primary: #b500d9;
+$primary: #ff4136;
 $danger: #ff4136;
-@import "~bootstrap/scss/bootstrap";
+$body-bg: white;
+$primary-border-subtle: red;
+@import "./md3-theme-builder.scss";

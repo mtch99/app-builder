@@ -1,7 +1,7 @@
 //@ts-check
 const fs = require('fs'); const path = require("path")
 const pluginName = 'ConsoleLogOnBuildWebpackPlugin';
-const DEFAULT_STYLES_PATH = path.join("src", "styles")
+const DEFAULT_STYLES_PATH = path.join(process.cwd(),"src", "styles")
 const THEME_FILE_NAME = "theme.json"
 const SASS_FILE_NAME = "md3-bootstrap.theme.scss"
 const DEFAULT_THEME_PATH = path.join(DEFAULT_STYLES_PATH, THEME_FILE_NAME)

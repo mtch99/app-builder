@@ -1,25 +1,30 @@
 //@ts-check
 const fs = require('fs'); const path = require("path")
 const pluginName = 'ConsoleLogOnBuildWebpackPlugin';
-const DEFAULT_PATH_TO_THEME = path.join("src", "styles", "theme.json")
+const DEFAULT_STYLES_PATH = path.join("src", "styles")
+const THEME_FILE_NAME = "theme.json"
+const SASS_FILE_NAME = "md3-bootstrap.theme.scss"
+const DEFAULT_THEME_PATH = path.join(DEFAULT_STYLES_PATH, THEME_FILE_NAME)
+const DEFAULT_SASS_PATH = path.join(DEFAULT_STYLES_PATH, SASS_FILE_NAME)
 class ReactBootstrapMD3Plugin {
   path_to_theme
-  constructor(path_to_theme=DEFAULT_PATH_TO_THEME){
+  constructor(path_to_theme=DEFAULT_THEME_PATH){
     this.path_to_theme = path_to_theme
   }
   apply(compiler) {
     compiler.hooks.run.tap(pluginName, (compilation) => {
       const theme = this.getTheme()
+      generateGlobalSass(theme)
     });
   }
 
   getTheme(){
     const setThemePath = (path) => {this.path_to_theme = path}
-    getTheme(setThemePath, this.path_to_theme)
+    return getTheme(setThemePath, this.path_to_theme)
   }
 }
 
-
+/*** MD3THEME  */
 /** Look for the theme.json file */
 /**
  * 
@@ -31,11 +36,11 @@ const getTheme = (setThemePath, filePath) => {
   try{
     if(!fs.existsSync(filePath)){
       logger.warning(`Verify the path to your MD3 theme file: ${filePath} is empty`)
-      logger.info(`Initializing a theme file at ${DEFAULT_PATH_TO_THEME}`)
+      logger.info(`Initializing a theme file at ${DEFAULT_THEME_PATH}`)
       return initTheme(setThemePath)
     } else if(!checkJSONExtension(filePath)){
       logger.warning(`Invalid file type`)
-      logger.info(`Initializing a theme file at ${DEFAULT_PATH_TO_THEME}`)
+      logger.info(`Initializing a theme file at ${DEFAULT_THEME_PATH}`)
       return initTheme(setThemePath)
     }
     else {
@@ -49,7 +54,7 @@ const getTheme = (setThemePath, filePath) => {
 
 
 const initTheme = (setThemePath) => {
-  const destPath = path.join(process.cwd(),DEFAULT_PATH_TO_THEME)
+  const destPath = path.join(process.cwd(),DEFAULT_THEME_PATH)
   fs.writeFileSync(destPath, JSON.stringify(INITIAL_THEME, null, 2))
   setThemePath(destPath)
   return require(destPath)
@@ -133,5 +138,43 @@ const INITIAL_THEME = {
     },
   }
 }
- 
+/*** !MD3Theme */
+
+
+/*** GlobalSass */
+
+/**
+ * 
+ * @param {*} theme 
+ */
+const generateGlobalSass = (theme) => {
+  const content = generateGlobalSassContent(theme)
+  fs.writeFileSync(DEFAULT_SASS_PATH, content)
+}
+
+// TODO: refactor: Map Theme object to sass file line (or commands)
+const generateGlobalSassContent = (theme) => {
+  let content=""
+  console.log(theme)
+  const light = theme.schemes.light
+  const setPrimary = `$primary: ${light.primary}`
+  const setBodybg  = `$body-bg: ${light.surfaceContainer}`
+  const setBodyColor = `$body-color: ${light.onSurface}`
+  const setBorderColor = `$border-color: ${light.outlineVariant}`
+  const lines = [
+    setPrimary,
+    setBodybg,
+    setBodyColor,
+    setBorderColor
+  ]
+
+  for(const line of lines){
+    const write = line.concat(';\n')
+    content = content.concat(write)
+  }
+
+  content = content.concat(`@import "~bootstrap/scss/bootstrap";`)
+  return content
+}
+/*** GlobalSass */
 module.exports = ReactBootstrapMD3Plugin;

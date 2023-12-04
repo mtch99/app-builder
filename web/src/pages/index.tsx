@@ -1,37 +1,36 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import type { NextPage } from "next";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row, Card, Navbar, Nav } from "react-bootstrap";
 
 export default function Home() {
   return (
-    <><Container>
+    <Container style={{flex:1, margin:0}}>
       <Row>
-        <Col>
-          <h1>React Bootstrap NextJS Tutorial</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-            aliquid quia optio odit nihil voluptatibus soluta labore earum
-            nostrum doloremque. Sequi laboriosam dicta praesentium, sit
-            aspernatur non molestiae voluptates beatae.
-          </p>
-          <Button>My Button</Button>
+        <Navbar style={{backgroundColor: "transparent"}}>
+
+        </Navbar>
+      </Row>
+      <Row>
+        <Col style={{paddingLeft:0}} xxl={1}>
+          <Nav defaultActiveKey="/home" className="flex-lg-column flex-shrink-1" navbar={true}>
+            <Nav.Link href="/home">Active</Nav.Link>
+            <Nav.Link eventKey="link-1">Link</Nav.Link>
+            <Nav.Link eventKey="link-2">Link</Nav.Link>
+            <Nav.Link eventKey="disabled" disabled>
+              Disabled
+            </Nav.Link>
+          </Nav>
+        </Col>
+        <Col style={{backgroundColor:"#FFF8F4", paddingRight:0}} className='flex-grow-1' xxl={true}>
+          <Container fluid={true}>
+            <Row className='vh-100 flex-grow-1'>
+
+            </Row>
+          </Container>
         </Col>
       </Row>
-    </Container><Container>
-        <Row>
-          <Col>
-            <h1>React Bootstrap NextJS Tutorial</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-              aliquid quia optio odit nihil voluptatibus soluta labore earum
-              nostrum doloremque. Sequi laboriosam dicta praesentium, sit
-              aspernatur non molestiae voluptates beatae.
-            </p>
-            <Button>My Button</Button>
-          </Col>
-        </Row>
-      </Container></>
+    </Container>
   )
 
 }

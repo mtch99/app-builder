@@ -5,18 +5,16 @@ import { Button, Col, Container, Row, Card, Navbar, Nav, ButtonGroup } from "rea
 
 export default function Home() {
   return (
-    <Container style={{flex:1, margin:0}}>
-      <Row>
-        <TopBar/>
-      </Row>
-      <Row className='vh-100'>
-        <Col style={{paddingLeft:0}} xxl={1}>
-          <SideBar/>
-        </Col>
-        <Col style={{backgroundColor:"#FFF8F4", paddingRight:0}} xxl={true}>
-          <Body/>
-        </Col>
-      </Row>
+    <Container fluid={true} className='d-flex flex-column vh-100'>
+      <TopBar/>
+        <Row className='h-100'>
+          <Col style={{paddingLeft:0}} xxl={1}>
+            <SideBar/>
+          </Col>
+          <Col style={{backgroundColor:"#FFF8F4"}} xxl={true}>
+            <Body/>
+          </Col>
+        </Row>
     </Container>
   )
 
@@ -25,9 +23,9 @@ export default function Home() {
 
 const TopBar = () => {
   return(
-    <Navbar style={{backgroundColor: "transparent"}}>
+    <Navbar>
       <Container>
-        <Navbar.Brand>Casa Grecque Icon</Navbar.Brand>
+        <Navbar.Brand style={{backgroundColor: "white"}}>Casa Grecque Icon</Navbar.Brand>
         <ButtonGroup>
         </ButtonGroup>
       </Container>
@@ -52,10 +50,7 @@ const SideBar = () => {
 
 const Body = () => {
   return (
-    <Container fluid={true}>
-      <Row>
-
-      </Row>
+    <Container fluid={true} style={{backgroundColor:"#FCF2EA"}}>
     </Container>
   )
 }

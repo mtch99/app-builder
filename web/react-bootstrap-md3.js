@@ -159,7 +159,7 @@ const generateGlobalSassContent = (theme) => {
   console.log(theme)
   const light = theme.schemes.light
   const setPrimary = `$primary: ${light.primary}`
-  const setBodybg  = `$body-bg: ${light.surface}`
+  const setBodybg  = `$body-bg: ${light.surfaceContainerHigh}`
   const setBodyColor = `$body-color: ${light.onSurface}`
   const setBorderColor = `$border-color: ${light.outlineVariant}`
   const lines = [

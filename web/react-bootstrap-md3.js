@@ -67,6 +67,7 @@ const logger = {
   info: (...args) => console.error("\x1b[34mreact-bootstrap-MD3-plugin\x1b[0m", ...args),
 };
 
+
 /**
  * 
  * @param {string} filePath 
@@ -158,7 +159,7 @@ const generateGlobalSassContent = (theme) => {
   console.log(theme)
   const light = theme.schemes.light
   const setPrimary = `$primary: ${light.primary}`
-  const setBodybg  = `$body-bg: ${light.surfaceContainer}`
+  const setBodybg  = `$body-bg: ${light.surfaceContainerHigh}`
   const setBodyColor = `$body-color: ${light.onSurface}`
   const setBorderColor = `$border-color: ${light.outlineVariant}`
   const lines = [

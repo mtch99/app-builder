@@ -1,5 +1,4 @@
 import { Container } from "react-bootstrap";
-import './styles.css'
 import { CSSProperties } from "react";
 
 export default function Calendar(){

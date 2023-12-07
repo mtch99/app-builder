@@ -5,7 +5,6 @@ import style from "styled-jsx/style"
 import useRouter from "./router";
 interface ILayoutProps {
 	children: React.ReactNode
-	router: any
 }
 
 export default function HomeLayout({ children }: ILayoutProps){

@@ -1,7 +1,7 @@
 import { Button, Col, Container, Row, Card, Navbar, Nav, ButtonGroup } from "react-bootstrap";
-import Calendar from './components/Calendar';
+import Calendar from '../components/Calendar';
 import { CSSProperties } from 'react';
-import Achievements from "./components/Achievements";
+import Achievements from "../components/Achievements";
 
 
 export default function Home() {

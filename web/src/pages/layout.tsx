@@ -1,19 +1,21 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import type { NextPage } from "next";
-import Link from 'next/link'
 import { Button, Col, Container, Row, Card, Navbar, Nav, ButtonGroup } from "react-bootstrap";
-import { Next } from 'react-bootstrap/esm/PageItem';
 
-export default function Home() {
+
+export interface ILayoutProps {
+	children: React.ReactNode
+}
+export default function HomeLayout({ children }: ILayoutProps){
 	return (
-		// <Container fluid={true} className='d-flex flex-column vh-100'>
-		// 	<TopBar/>
-		// 	<Row className='h-100'>
-					// <SideBar/>
-					<Body/>
-		// 	</Row>
-		// </Container>
+		<Container fluid={true} className='d-flex flex-column vh-100'>
+			<TopBar/>
+			<Row className='h-100'>
+					<SideBar/>
+					{children}
+			</Row>
+		</Container>
 	)
 		
 }
@@ -34,27 +36,12 @@ const SideBar = () => {
 	return (
 		// Background color here is surfaceContainerLowest
 		<Col style={{backgroundColor:"#FFFAFA", borderTopRightRadius:".5rem"}} xs={1} className='nav flex-column'>
-			<Nav.Link><Link href="/page2">Active</Link></Nav.Link>
+			<Nav.Link href="/home">Active</Nav.Link>
 			<Nav.Link eventKey="link-1">Link</Nav.Link>
 			<Nav.Link eventKey="link-2">Link</Nav.Link>
 			<Nav.Link eventKey="disabled" disabled>
 				Disabled
 			</Nav.Link>
-		</Col>
-	)
-}
-	
-	
-const Body = () => {
-	return (
-		<Col style={{backgroundColor:"transparent"}} className='h-100'>
-			{/** Background color here is surfaceContainer */}
-			<Container className='mb-3 h-100' style={{backgroundColor:"#F6ECE4", borderRadius:"1rem"}} fluid={true}>
-				{/** Background color here is surfaceContainerHighest  */}
-					<Row>
-
-					</Row>
-				</Container>
 		</Col>
 	)
 }

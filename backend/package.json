@@ -1,0 +1,11 @@
+{
+  "name": "backend-app-builder",
+  "version": "0.1.0",
+  "description": "A low-code tool that help creative builders develop complex backend applications ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maxime Tchagou",
+  "license": "ISC"
+}

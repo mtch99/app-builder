@@ -1,4 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Web app
+Here is an example web frontend built with [NextJS](https://nextjs.org) and developed using [react-bootstrap](https://react-bootstrap.netlify.app) UI framework
+
+## Instalation
+```bash
+npm install
+# or
+yarn add
+# or
+pnpm install
+# or
+bun install
+```
 
 ## Getting Started
 

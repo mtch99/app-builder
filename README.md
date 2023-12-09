@@ -28,8 +28,3 @@ This module is responsible for frontend design and development automation
 #### infrastructure
 This module is responsible for infrastructure testing and deployment automation
 [docs](./infrastructure/README.md)
-
-### Web app
-Here is an example web frontend built using Nextjs and react-bootstrap
-
-

@@ -24,7 +24,7 @@ const TopBar = () => {
 	return(
 		<Navbar>
 			<Container className='m-0'>
-				<Navbar.Brand>Casa Grecque Icon</Navbar.Brand>
+				<Navbar.Brand>Todo App Icon</Navbar.Brand>
 			</Container>
 		</Navbar>
 	)

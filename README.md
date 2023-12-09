@@ -13,6 +13,23 @@ This is a full stack todo app, with a mobile and web version
 [Explain how to install your project. Include any dependencies or prerequisites.]
 
 ```bash
-npm install your-package-name
+git clone https://github.com/mtch99/app-builder.git
 ```
-##
+## Usage
+The app builder has two top level modules: 
+#### frontend
+This module is responsible for frontend design and development automation
+[docs](./frontend/web/README.md)
+
+#### backend
+This module is responsible for frontend design and development automation
+[docs](./backend/README.md)
+
+#### infrastructure
+This module is responsible for infrastructure testing and deployment automation
+[docs](./infrastructure/README.md)
+
+### Web app
+Here is an example web frontend built using Nextjs and react-bootstrap
+
+

@@ -1,6 +1,7 @@
 import { CSSProperties } from "react";
 import { Container } from "react-bootstrap";
 import FeedContentView, { IFeedItem } from "./FeedItem";
+import Section from "../Section";
 
 
 
@@ -12,14 +13,38 @@ export default function Feed(){
         },
         {
             title: "Denis Monet",
-            body: "Salut Véronique! \u{1F601} asd"
-        }
+            body: "Le sondage est présentement en cours. Tel que discuté hier brièvement au téléphone, nous avons déjà presque 10 000 répondants \u{1F601}"
+        },
+        {
+            title: "Denis Monet",
+            body: "Salut Véronique!"
+        },
+        {
+            title: "Denis Monet",
+            body: "Salut Véronique! \u{1F601}"
+        },
+        {
+            title: "Denis Monet",
+            body: "Salut Véronique!"
+        },
+        {
+            title: "Denis Monet",
+            body: "Salut Véronique! \u{1F601}"
+        },
+        {
+            title: "Denis Monet",
+            body: "Salut Véronique!"
+        },
+        {
+            title: "Denis Monet",
+            body: "Salut Véronique! \u{1F601}"
+        },
+
     ]
     return (
-        <Container className="h-100 m-0" style={styles.container} fluid>
-            <p className='fs-5 p-2 m-0' style={{fontWeight:"600"}}> Feed </p>
+        <Section title="Feed">
             <FeedContentView {...{feedData}}/>
-        </Container>
+        </Section>
     )
 }
 

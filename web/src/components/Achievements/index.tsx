@@ -1,17 +1,29 @@
 import { CSSProperties } from "react"
 import { Container } from "react-bootstrap"
+import FeedContentView, { IFeedItem } from "../Feed/FeedItem"
+import Section from "../Section"
+
+const feedData: IFeedItem[] = [
+    {
+        title: "Denis Monet",
+        body: "Salut Véronique!"
+    },
+    {
+        title: "Denis Monet",
+        body: "Salut Véronique! \u{1F601}"
+    },
+    {
+        title: "Denis Monet",
+        body: "Salut Véronique!"
+    },
+
+]
 
 export default function Achievements(){
-	return (
-		<Container style={styles.container} fluid className='h-100'>
-            <p className='fs-5 p-3' style={{fontWeight:"600"}}> Accomplissements </p>
-        </Container>
-	)
-}
 
-const styles: {[key:string]: CSSProperties} = {
-    container: {
-        borderRadius: ".5rem",
-        backgroundColor:"#F5F5F5"
-    },
+	return (
+		<Section title="Achievements">
+            <FeedContentView {...{feedData}}/>
+        </Section>
+	)
 }

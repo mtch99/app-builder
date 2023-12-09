@@ -4,6 +4,7 @@ import { CSSProperties } from 'react';
 import Achievements from "../components/Achievements";
 import Feed from "../components/Feed";
 import Section from "../components/Section";
+import UpdateSection from "../components/Update";
 
 
 export default function Home() {
@@ -30,26 +31,30 @@ const Body = ({children} : {children: React.ReactNode}) => {
 
 const BodyContent = () => {
 	return(
+		// <Container className="h-100 p-0 m-0">
 		<>
 			<Row className='h-50'>
 				<Col className='h-100' style={{flex:3}}>
 					<Calendar/>
 				</Col>
-				<Col className='h-100' style={{flex: 1}}>
+				<Col className='h-100 overfow' style={{flex: 1}}>
 					<Achievements/>
 				</Col>
 			</Row>
-			<Row className='h-50 mt-2'>
+			<Row className='h-50 mt-4 pb-2'>
 				<Col className='h-100' style={{flex:2}}>
 					<Feed/>
 				</Col>
 				<Col className='h-100' style={{flex:2}}>
-					<Section title="Updates"/>
+					<UpdateSection/>
 				</Col>
 				<Col className='h-100' style={{flex:3}}>
 					<Section title="In a Nusthell"/>
 				</Col>
 			</Row>
+		{/* // </Container> */}
 		</>
 	)
 }
+
+

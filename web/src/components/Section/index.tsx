@@ -4,15 +4,15 @@ import { Container } from "react-bootstrap";
 
 export type Props = {
     title: string;
-    content?: React.ReactNode
+    children?: React.ReactNode
 }
 
 
-export default function Section({title, content}: Props){
+export default function Section({title, children}: Props){
     return (
-        <Container className="h-100 m-0" style={styles.container} fluid>
-            <p className='fs-5 p-3' style={{fontWeight:"600"}}> {title} </p>
-            {content}
+        <Container className="h-100 m-0 overflow-auto" style={styles.container} fluid>
+            <p className='fs-5 p-2 m-0' style={{fontWeight:"600"}}> {title} </p>
+            {children}
         </Container>
     )
 }

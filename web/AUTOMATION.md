@@ -5,4 +5,7 @@ This is a markdown for planning and tracking automation ideas for a NextJs + rea
 
 
 
+
+
 ## IDEAS
+- [ ] Heure et jour sur les cartes de notifications

@@ -1,4 +1,4 @@
-import { IFeedItem } from "../components/Feed/FeedItem"
+import { IFeedItem } from "../../models"
 
 const feedData: IFeedItem[] = [
     {

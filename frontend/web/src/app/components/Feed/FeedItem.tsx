@@ -1,6 +1,7 @@
 "use client";
 import { CSSProperties } from "react";
 import { Card, Container } from "react-bootstrap";
+import { IFeedItem } from "../../../models";
 
 
 type IFeedItemViewProps = {
@@ -17,12 +18,6 @@ export function FeedItemView({feedItem}: IFeedItemViewProps){
             </p>
         </Container>
     )
-}
-
-
-export interface IFeedItem {
-    title: string
-    body: string
 }
 
 type FeedContentViewProps = {

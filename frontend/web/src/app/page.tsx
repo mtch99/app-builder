@@ -1,10 +1,10 @@
 import { Button, Col, Container, Row, Card, Navbar, Nav, ButtonGroup } from "react-bootstrap";
-import Calendar from '../components/Calendar';
 import { CSSProperties } from 'react';
-import Achievements from "../components/Achievements";
-import Feed from "../components/Feed";
-import Section from "../components/Section";
-import UpdateSection from "../components/Update";
+import Achievements from "./components/Achievements";
+import Calendar from "./components/Calendar";
+import Feed from "./components/Feed";
+import Section from "./components/Section";
+import UpdateSection from "./components/Update";
 
 
 export default function Home() {
